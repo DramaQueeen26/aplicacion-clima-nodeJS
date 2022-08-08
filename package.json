@@ -1,0 +1,24 @@
+{
+  "name": "clima-app-nodeJS",
+  "version": "1.0.0",
+  "description": "Aplicación de Clima (GeoLocation + OpenWeatherMaps) desarrollado con NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DramaQueeen26/clima-app-nodeJS.git"
+  },
+  "keywords": [],
+  "author": "Mariangel Yajure",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DramaQueeen26/clima-app-nodeJS/issues"
+  },
+  "homepage": "https://github.com/DramaQueeen26/clima-app-nodeJS#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "inquirer": "^7.3.3"
+  }
+}

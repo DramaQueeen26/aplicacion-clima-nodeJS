@@ -1,17 +1,53 @@
+require('colors');
 const {
 	inquirerMenu,
 	pause,
 	leerInput
 	} = require('./helpers/inquirer');
+const Busquedas = require('./models/busquedas');
 
 const main = async() => {
 	
+	const busquedas = new Busquedas();
 	let opt;
-	
-	do{
 
+	do{
+		//Llamar el menú de inquirer
 		opt = await inquirerMenu();
-		console.log('Ha seleccionado la opción ' + opt);
+		
+		//La opción que elija el usuario
+
+		switch(opt){
+			case 1:
+
+				//Mostrar mensaje
+				const lugar = await leerInput('Ciudad:');
+				console.log();
+				console.log(`${lugar}`.blue);
+				
+				//Buscar los lugares
+
+				//Seleccionar el lugar
+
+				//Clima
+
+				//Mostrar resultados
+				console.log('\nInformación de la ciudad\n'.green);
+				console.log('Ciudad:');
+				console.log('Latitud:');
+				console.log('Longitud:');
+				console.log('Temperatura:');
+				console.log('Mínima:');
+				console.log('Máxima:');
+
+			break;
+			case 2:
+
+
+
+			break;
+		}
+
 
 		if(opt !== 0) await pause();
 

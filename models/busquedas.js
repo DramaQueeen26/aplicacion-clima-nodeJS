@@ -23,10 +23,13 @@ class Busquedas
 				}
 			});
 
-			const r = await instance.get()
-			console.log(r.data)
+			const r = await instance.get();
 
-			return []; //Regresar los lugares que coincida 
+			return r.data.data.map(lugar => ({
+				name: lugar.label,
+				lat: lugar.latitude,
+				lng: lugar.longitude
+			}));
 		
 		}catch(error){
 			console.log('No se encontró el lugar');

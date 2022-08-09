@@ -12,8 +12,18 @@ class Busquedas
 	async ciudad(lugar = '')
 	{
 		try{
+			
 			//petición http
-			const r = await axios.get('https://reqres.in/api/users?page=2');
+			const instance = axios.create({
+				baseURL: 'http://api.positionstack.com/v1/forward',
+				params: {
+					'access_key': 'f32e9c12c4229b0521c9f54bde86b41e',
+					'query': lugar,
+					'limit': 5
+				}
+			});
+
+			const r = await instance.get()
 			console.log(r.data)
 
 			return []; //Regresar los lugares que coincida 

@@ -17,7 +17,7 @@ class Busquedas
 			const instance = axios.create({
 				baseURL: 'http://api.positionstack.com/v1/forward',
 				params: {
-					'access_key': 'f32e9c12c4229b0521c9f54bde86b41e',
+					'access_key': process.env.GEO_KEY,
 					'query': lugar,
 					'limit': 5
 				}

@@ -49,12 +49,13 @@ const main = async() => {
 				console.log('Cómo está el clima:', desc.green);
 
 			break;
+			
 			case 2:
+				
 				busquedas.historial.forEach((lugar, i) => {
 					const idx = `${i + 1}.`.green;
 					console.log(`${idx} ${lugar}`)
 				});
-
 
 			break;
 		}

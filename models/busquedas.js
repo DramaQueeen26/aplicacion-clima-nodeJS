@@ -8,7 +8,7 @@ class Busquedas
 
 	constructor()
 	{
-		//TODO: leer DB si existe
+		this.leerDB();
 	}
 
 	async ciudad(lugar = '')
@@ -74,7 +74,11 @@ class Busquedas
 		if(this.historial.includes(lugar)){
 			return;
 		}
-
+		
+		//Cortar el arreglo de la posición 0 a la 5
+		this.historial = this.historial.splice(0, 5);
+		
+		//agregar al inicio del arreglo
 		this.historial.unshift(lugar);
 
 		// GuardarDB
@@ -89,6 +93,19 @@ class Busquedas
 
 		fs.writeFileSync(this.dbPath, JSON.stringify(payload))
 	}
+
+	leerDB()
+	{
+		if(!fs.existsSync(this.dbPath)){
+		return null;
+		}
+
+		const info = fs.readFileSync(this.dbPath, {encoding: 'utf-8'});
+		const data = JSON.parse(info); //De string a arreglo, u objeto
+
+		this.historial = data.historial;
+	}
+
 }
 
 module.exports = Busquedas;

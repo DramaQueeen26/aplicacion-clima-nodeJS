@@ -16,9 +16,8 @@ const main = async() => {
 	do{
 		//Llamar el menú de inquirer
 		opt = await inquirerMenu();
-		
-		//La opción que elija el usuario
 
+		//La opción que elija el usuario
 		switch(opt){
 			case 1:
 
